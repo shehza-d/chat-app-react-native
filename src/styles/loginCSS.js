@@ -48,7 +48,10 @@ export const loginStyles = StyleSheet.create({
   // labels: {
   //   color: "black",
   // },
-  textInput2: {},
+  footerText: {
+color:'black',
+    fontWeight:300
+  },
   labels2: {},
   labels3: {},
 });

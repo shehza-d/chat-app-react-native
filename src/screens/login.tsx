@@ -11,6 +11,8 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+// import Svg, { Circle } from "react-native-svg";
+import { SvgUri } from 'react-native-svg';
 
 export default function LoginScreen(): JSX.Element {
   return (
@@ -29,6 +31,24 @@ export default function LoginScreen(): JSX.Element {
         {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
         <Text style={styles.heading}>SMIT CHAT</Text>
         <Text style={styles.subHeading}>Welcome back! Let's Login</Text>
+        {/* <Svg height="50%" width="50%" viewBox="0 0 100 100">
+          <Circle
+            cx="50"
+            cy="50"
+            r="45"
+            stroke="blue"
+            strokeWidth="2.5"
+            fill="green"
+          />
+        </Svg> */}
+
+        <SvgUri
+    width="100%"
+    height="100%"
+    uri="http://thenewcode.com/assets/images/thumbnails/homer-simpson.svg"
+  />
+
+
 
         <View style={styles.inputContainer}>
           {/* <Text style={styles.labels}>Enter you email</Text> */}
@@ -39,7 +59,7 @@ export default function LoginScreen(): JSX.Element {
             style={styles.textInput}
             autoCapitalize="none"
             autoCorrect={false}
-            placeholderTextColor={'#a8a5a5'}
+            placeholderTextColor={"#a8a5a5"}
           />
 
           {/* <Text style={styles.labels}>Enter you Password</Text> */}
@@ -51,16 +71,14 @@ export default function LoginScreen(): JSX.Element {
             autoCapitalize="none"
             autoCorrect={false}
             secureTextEntry={true}
-            placeholderTextColor={'#a8a5a5'}
+            placeholderTextColor={"#a8a5a5"}
           />
 
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.subHeading}>
-          Don't have an account yet? Signup
-        </Text>
+        <Text style={styles.footerText}>Don't have an account yet? Signup</Text>
         {/* </ScrollView> */}
       </View>
       {/* </ScrollView> */}
