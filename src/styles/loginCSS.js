@@ -7,20 +7,23 @@ export const loginStyles = StyleSheet.create({
     justifyContent: "center",
   },
   inputContainer: {
-    width:'100%',
+    width: "100%",
     color: "yellow",
   },
   heading: {
+    fontFamily:'serif',
     fontSize: 34,
-    color:'black',
+    color: "black",
     fontWeight: "600",
     // marginTop: 8,
   },
   subHeading: {
+    fontFamily:'serif',
     fontWeight: "700",
     color: "black",
   },
   textInput: {
+    fontFamily:'serif',
     margin: 15,
     paddingHorizontal: 15,
     borderWidth: 2,
@@ -42,6 +45,8 @@ export const loginStyles = StyleSheet.create({
     backgroundColor: "#5DFF43",
   },
   buttonText: {
+    fontFamily:'serif',
+
     fontWeight: 600,
     color: "#474747",
   },
@@ -49,8 +54,11 @@ export const loginStyles = StyleSheet.create({
   //   color: "black",
   // },
   footerText: {
-color:'black',
-    fontWeight:300
+    fontFamily:'serif',
+    marginTop:20,
+    textAlign: "center",
+    color: "black",
+    fontWeight: 300,
   },
   labels2: {},
   labels3: {},

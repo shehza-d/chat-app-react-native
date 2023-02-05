@@ -10,6 +10,7 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Alert,
 } from "react-native";
 import LogoIcon from "../assets/logoIcon"; //SVG
 
@@ -17,9 +18,14 @@ export default function LoginScreen(): JSX.Element {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit =()=>{
-    
-  }
+  const handleSubmit = () => {
+    if (userName.toLowerCase() && password === "123456") {
+      Alert.alert("correct");
+    } else {
+      Alert.alert("Email or Password is incorrect!");
+    }
+    return;
+  };
   return (
     <SafeAreaView>
       {/* <StatusBar /> */}
@@ -54,7 +60,7 @@ export default function LoginScreen(): JSX.Element {
             autoCorrect={false}
             secureTextEntry={true}
             value={password}
-            onChangeText={(text) => setPassword (text)}
+            onChangeText={(text) => setPassword(text)}
             placeholder={"Password"}
             keyboardType="visible-password"
             placeholderTextColor={"#a8a5a5"}
@@ -68,12 +74,31 @@ export default function LoginScreen(): JSX.Element {
             //   />
             // }
           />
-
-          <TouchableOpacity style={styles.button} onPress={()=>handleSubmit()}>
+          <TouchableOpacity>
+            <Text
+              style={{
+                textAlign: "right",
+                paddingRight: 18,
+                color: "black",
+                fontWeight: "300",
+                fontFamily:'serif',
+              }}
+            >
+              Forget Password?
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleSubmit()}
+          >
             <Text style={styles.buttonText}>LOGIN</Text>
           </TouchableOpacity>
         </View>
-        <Text style={styles.footerText}>Don't have an account yet? Signup</Text>
+        <TouchableOpacity>
+          <Text style={styles.footerText}>
+            Don't have an account yet? Signup
+          </Text>
+        </TouchableOpacity>
         {/* </ScrollView> */}
       </View>
       {/* </ScrollView> */}
