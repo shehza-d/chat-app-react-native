@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 
+// font-family: 'Outfit', sans-serif;
+
 export const loginStyles = StyleSheet.create({
   container: {
     marginTop: 32,
@@ -10,7 +12,6 @@ export const loginStyles = StyleSheet.create({
     width: "100%",
     color: "yellow",
   },
-  
   heading: {
     fontFamily:'serif',
     fontSize: 34,
@@ -25,14 +26,14 @@ export const loginStyles = StyleSheet.create({
   },
   textInput: {
     fontFamily:'serif',
+    fontWeight: 'normal',
     margin: 15,
     paddingHorizontal: 15,
     borderWidth: 2,
     borderColor: "rgba(0,0,0,0.3)",
     borderRadius: 10,
     color: "black",
-    fontSize: 18,
-    fontFamily: "regular",
+    fontSize: 20,
     // backgroundColor: "black",
   },
   button: {
