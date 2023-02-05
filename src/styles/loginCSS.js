@@ -6,6 +6,7 @@ export const loginStyles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+   
   inputContainer: {
     width: "100%",
     color: "yellow",
