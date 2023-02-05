@@ -5,12 +5,12 @@ export const loginStyles = StyleSheet.create({
     marginTop: 32,
     alignItems: "center",
     justifyContent: "center",
-  },
-   
+  }, 
   inputContainer: {
     width: "100%",
     color: "yellow",
   },
+  
   heading: {
     fontFamily:'serif',
     fontSize: 34,
