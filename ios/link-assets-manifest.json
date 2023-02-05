@@ -1,0 +1,53 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/OFL.txt",
+      "sha1": "a12ec4bc9e9537d462bc205a47385128f5a43a12"
+    },
+    {
+      "path": "assets/fonts/Outfit-100.ttf",
+      "sha1": "7c18fa1287a9fe229f649ad4dfaa916bc1873ce3"
+    },
+    {
+      "path": "assets/fonts/Outfit-200.ttf",
+      "sha1": "0cf062c845e7734b0e75361bf342e98912f570b1"
+    },
+    {
+      "path": "assets/fonts/Outfit-300.ttf",
+      "sha1": "7dd71083d22da6d08dd0d6af6759109776f0b3f5"
+    },
+    {
+      "path": "assets/fonts/Outfit-400.ttf",
+      "sha1": "bcb85df11636ccfe003e92f12515c29c3be865f5"
+    },
+    {
+      "path": "assets/fonts/Outfit-500.ttf",
+      "sha1": "86e6867ae0aba1eb8aa4bda25d2fe0a5ca02bee8"
+    },
+    {
+      "path": "assets/fonts/Outfit-600.ttf",
+      "sha1": "21ab97de1536d82672bf6fec078814506cdf9d28"
+    },
+    {
+      "path": "assets/fonts/Outfit-800.ttf",
+      "sha1": "5b76ce82ddcc48b5339e047a7aef88ce0a334941"
+    },
+    {
+      "path": "assets/fonts/Outfit-Black.ttf",
+      "sha1": "acf16819309cc0e21abd72b4cdd932df559e9f9e"
+    },
+    {
+      "path": "assets/fonts/Outfit-Bold.ttf",
+      "sha1": "dff38f4c216b9145d9dd284a78fce52e057e2194"
+    },
+    {
+      "path": "assets/fonts/Outfit-VariableFont_wght.ttf",
+      "sha1": "c6f27b9debf80ecaf0ac866b0edc25519825730a"
+    },
+    {
+      "path": "assets/fonts/README.txt",
+      "sha1": "d12e1b5ddd40a931c1fd340cff3de0b6b2d6d367"
+    }
+  ]
+}

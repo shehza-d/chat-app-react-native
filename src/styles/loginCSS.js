@@ -1,32 +1,35 @@
 import { StyleSheet } from "react-native";
 
-// font-family: 'Outfit', sans-serif;
-
 export const loginStyles = StyleSheet.create({
   container: {
+    // flex:1,
     marginTop: 32,
+    width: "100%",
     alignItems: "center",
     justifyContent: "center",
-  }, 
+    
+  },
+  innerContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: "100%",
+  },
   inputContainer: {
     width: "100%",
     color: "yellow",
   },
   heading: {
-    fontFamily:'serif',
+    fontFamily: "Outfit-600",
+    letterSpacing: 2,
     fontSize: 34,
     color: "black",
-    fontWeight: "600",
-    // marginTop: 8,
   },
   subHeading: {
-    fontFamily:'serif',
-    fontWeight: "700",
+    fontFamily: "Outfit-500",
     color: "black",
   },
   textInput: {
-    fontFamily:'serif',
-    fontWeight: 'normal',
+    fontFamily: "Outfit-400",
     margin: 15,
     paddingHorizontal: 15,
     borderWidth: 2,
@@ -34,12 +37,10 @@ export const loginStyles = StyleSheet.create({
     borderRadius: 10,
     color: "black",
     fontSize: 20,
-    // backgroundColor: "black",
   },
   button: {
-    // color:'black',
     margin: 15,
-    padding: 15,
+    padding: 12,
     borderWidth: 2,
     borderColor: "rgba(0,0,0,0.3)",
     borderRadius: 10,
@@ -47,21 +48,28 @@ export const loginStyles = StyleSheet.create({
     backgroundColor: "#5DFF43",
   },
   buttonText: {
-    fontFamily:'serif',
-
-    fontWeight: 600,
+    fontFamily: "Outfit-600",
+    fontSize: 20,
+    letterSpacing: 3,
     color: "#474747",
   },
-  // labels: {
-  //   color: "black",
-  // },
+  forgetPsw: {
+    fontFamily: "Outfit-200",
+    textAlign: "right",
+    paddingRight: 18,
+    color: "black",
+  },
   footerText: {
-    fontFamily:'serif',
-    marginTop:20,
+    fontFamily: "Outfit-300",
+    marginTop: 20,
     textAlign: "center",
     color: "black",
-    fontWeight: 300,
   },
-  labels2: {},
-  labels3: {},
+  shehzad: {
+    fontFamily: "Outfit-200",
+    marginTop: 50,
+    fontSize: 13,
+    textAlign: "center",
+    color: "black",
+  },
 });
