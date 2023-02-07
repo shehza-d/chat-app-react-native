@@ -12,37 +12,29 @@ import {
   TextInput,
 } from "react-native";
 import LoginScreen from "./src/screens/login";
+import SignupScreen from "./src/screens/signup";
 // import Login from './components/login';
 // import {styles}  from './styles/styleSheet';
 
 const statusBarStyles: string[] = ["default", "dark-content", "light-content"];
 const Stack = createNativeStackNavigator();
-const globalScreenOptions={
-
-// headerStyle:{backgroundColor:'#31F711FF'},
-headerStyle:{backgroundColor:'#5DFF43'},
-headerTitleStyle:{color:'black'},
-headerTintColor:{color:'black'},
-
-
-
-}
-
-
-
-
-
+const globalScreenOptions = {
+  // headerStyle:{backgroundColor:'#31F711FF'},
+  headerStyle: { backgroundColor: "#5DFF43" },
+  headerTitleStyle: { color: "black" },
+  headerTintColor: { color: "black" },
+};
 
 export default function App() {
   return (
     <>
-       <StatusBar
+      <StatusBar
         // animated={true}
         backgroundColor="#5DFF43"
         barStyle={statusBarStyles[1]}
         // showHideTransition={statusBarTransition}
         // hidden={hidden}
-      /> 
+      />
       <NavigationContainer>
         <Stack.Navigator screenOptions={globalScreenOptions}>
           <Stack.Screen
@@ -50,9 +42,14 @@ export default function App() {
             component={LoginScreen}
             // options={{ title: "Let's get Started" }}
           />
+           <Stack.Screen
+            name="Login"
+            component={SignupScreen}
+            // options={{ title: "Let's get Started" }}
+          />
+          
         </Stack.Navigator>
       </NavigationContainer>
     </>
   );
 }
-

@@ -12,6 +12,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+//to register user
 export default function SignupScreen(): JSX.Element {
   return (
     <SafeAreaView>
