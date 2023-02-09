@@ -14,18 +14,23 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import LogoIcon from "../../assets/icons/logoIcon"; //SVG
+import axios from "axios";
+
+const BASE_URI = "http://172:3003";
 
 export default function LoginScreen({ navigation }): JSX.Element {
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleSubmit = () => {
-    if (userName.toLowerCase() && password === "123456") {
-      Alert.alert("correct");
-    } else {
-      Alert.alert("Email or Password is incorrect!");
-    }
-    return;
+  const handleSubmit = async () => {
+    const res = await axios.post(
+      `${BASE_URI}/login`,
+      {
+        email,
+        password,
+      },
+      { withCredentials: true }
+    );
   };
   return (
     <SafeAreaView>
@@ -44,9 +49,8 @@ export default function LoginScreen({ navigation }): JSX.Element {
 
           <View style={styles.inputContainer}>
             <TextInput
-              value={userName}
-              onChangeText={(text) => setUserName(text)}
-              autoFocus
+              value={email}
+              onChangeText={(text) => setEmail(text)}
               placeholder={"Email"}
               keyboardType="email-address"
               style={styles.textInput}
