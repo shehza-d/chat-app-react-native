@@ -30,7 +30,7 @@ export default function LoginScreen({ navigation }: any): JSX.Element {
   const passwordInputRef: any = useRef("");
 
   console.log(state.testing);
-  Alert.alert(state.testing);
+  // Alert.alert(state.testing);
 
   const handleSubmit = async () => {
     try {
@@ -63,7 +63,7 @@ export default function LoginScreen({ navigation }: any): JSX.Element {
         >
           <LogoIcon />
 
-          <Text style={styles.heading}>SMIT CHAT</Text>
+          <Text style={styles.heading}>SMIT CHAT df</Text>
           <Text style={styles.subHeading}>Welcome back! Let's Login</Text>
 
           <View style={styles.inputContainer}>

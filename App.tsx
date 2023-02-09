@@ -14,6 +14,8 @@ import {
 import ContextProvider from "./context/context";
 import LoginScreen from "./src/screens/login";
 import SignupScreen from "./src/screens/signup";
+import AllChat from "./src/screens/AllChats";
+import Chat from "./src/screens/chat";
 // import Login from './components/login';
 // import {styles}  from './styles/styleSheet';
 
@@ -37,18 +39,27 @@ export default function App() {
         // hidden={hidden}
       />
       <NavigationContainer>
-        <Stack.Navigator screenOptions={globalScreenOptions}>
+        <Stack.Navigator screenOptions={globalScreenOptions} initialRouteName="Chats">
           <Stack.Screen
             name="Login"
             component={LoginScreen}
-            // options={{ title: "Let's get Started" }}
+            options={{ title: "LOG-IN" }}
           />
-           <Stack.Screen
+          <Stack.Screen
             name="Sign-up"
             component={SignupScreen}
-            options={{ title: "Let's get Started" }}
+            options={{ title: "SIGN-UP" }}
           />
-          
+          <Stack.Screen
+            name="Chats"
+            component={AllChat}
+            options={{ title: "All Chats" }}
+          />
+          <Stack.Screen
+            name="Chat"
+            component={Chat}
+            options={{ title: "User" }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </ContextProvider>
