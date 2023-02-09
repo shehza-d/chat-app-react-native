@@ -15,7 +15,7 @@ import {
 } from "react-native";
 import LogoIcon from "../../assets/icons/logoIcon"; //SVG
 
-export default function LoginScreen(): JSX.Element {
+export default function LoginScreen({ navigation }): JSX.Element {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
 
@@ -32,7 +32,11 @@ export default function LoginScreen(): JSX.Element {
       {/* <StatusBar /> */}
       {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
       <View style={styles.container}>
-        <KeyboardAvoidingView behavior="padding" enabled style={styles.innerContainer}>
+        <KeyboardAvoidingView
+          behavior="padding"
+          enabled
+          style={styles.innerContainer}
+        >
           <LogoIcon />
 
           <Text style={styles.heading}>SMIT CHAT</Text>
@@ -83,9 +87,9 @@ export default function LoginScreen(): JSX.Element {
               <Text style={styles.buttonText}>LOGIN</Text>
             </TouchableOpacity>
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Sign-up")}>
             <Text style={styles.footerText}>
-              Don't have an account yet? Signup
+              Don't have an account yet? Sign-up
             </Text>
           </TouchableOpacity>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { loginStyles as styles } from "../styles/loginCSS";
 import {
   SafeAreaView,
@@ -10,51 +10,97 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  Alert,
+  KeyboardAvoidingView,
 } from "react-native";
+import LogoIcon from "../../assets/icons/logoIcon"; //SVG
 
-//to register user
-export default function SignupScreen(): JSX.Element {
+export default function LoginScreen({ navigation }): JSX.Element {
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    return;
+  };
   return (
     <SafeAreaView>
       {/* <StatusBar /> */}
       {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
-      <View>
-        <Image
-          source={{
-            uri: "https://res.cloudinary.com/deh1sqok6/image/upload/v1675425733/chatApp-Native/x1h7axsbix3m43klpikj.png",
-          }}
-          style={{ width: 200, height: 200, borderRadius: 30 }}
-          alt="Shehzad Chat-App Logo"
-        />
-        {/* <ScrollView contentInsetAdjustmentBehavior="automatic"> */}
-        <Text style={styles.subHeading}>SMIT CHAT</Text>
-        <Text style={styles.subHeading}>Welcome back! Let's Login</Text>
+      <View style={styles.container}>
+        <KeyboardAvoidingView
+          behavior="padding"
+          enabled
+          style={styles.innerContainer}
+        >
+          <LogoIcon />
 
-        <View style={styles.inputContainer}>
-          <TextInput
-            autoFocus
-            placeholder={"Email"}
-            keyboardType="email-address"
-            style={styles.textInput}
-            autoCapitalize="none"
-            autoCorrect={false}
-          />
-          <TextInput
-            autoFocus
-            placeholder={"Password"}
-            keyboardType="email-address"
-            style={styles.textInput}
-            autoCapitalize="none"
-            autoCorrect={false}
-            secureTextEntry={true}
-          />
+          <Text style={styles.heading}>SMIT CHAT</Text>
+          <Text style={styles.subHeading}>Let's create you account</Text>
 
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>SIGN-UP</Text>
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.textInput}
+              autoCapitalize="none"
+              autoCorrect={false}
+              secureTextEntry={true}
+              value={userName}
+              onChangeText={(text) => setUserName(text)}
+              placeholder={"Username"}
+              keyboardType="visible-password"
+              placeholderTextColor={"#a8a5a5"}
+            ></TextInput>
+            <TextInput
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+              placeholder={"Email"}
+              keyboardType="email-address"
+              style={styles.textInput}
+              autoCapitalize="none"
+              autoCorrect={false}
+              placeholderTextColor={"#a8a5a5"}
+            />
+
+            <TextInput
+              style={styles.textInput}
+              autoCapitalize="none"
+              autoCorrect={false}
+              secureTextEntry={true}
+              value={password}
+              onChangeText={(text) => setPassword(text)}
+              placeholder={"Password"}
+              keyboardType="visible-password"
+              placeholderTextColor={"#a8a5a5"}
+              // blurOnSubmit={false}
+              // multiline={false}
+              // onChangeText={password => updateState({password})}
+              // right={
+              //   <TextInput.Icon
+              //     name="eye"
+              //     onPress={() => setHidePass(!hidePass)}
+              //   />
+              // }
+            />
+            {/* <View style={{height:100}}/> */}
+            {/* <TouchableOpacity>
+              <Text style={styles.forgetPsw}>Forget Password?</Text>
+            </TouchableOpacity> */}
+
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => handleSubmit()}
+            >
+              <Text style={styles.buttonText}>SIGN-UP</Text>
+            </TouchableOpacity>
+          </View>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+            <Text style={styles.footerText}>
+              Already have an account? Login
+            </Text>
           </TouchableOpacity>
-        </View>
-        <Text style={styles.subHeading}>Already have an account? Login</Text>
-        {/* </ScrollView> */}
+
+          {/* <Text style={styles.shehzad}>Powered by SHEHZAD</Text> */}
+        </KeyboardAvoidingView>
       </View>
       {/* </ScrollView> */}
     </SafeAreaView>
