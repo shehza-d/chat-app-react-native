@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { RefObject, useRef, useState } from "react";
 import { loginStyles as styles } from "../styles/loginCSS";
 import {
   SafeAreaView,
@@ -12,25 +12,40 @@ import {
   TouchableOpacity,
   Alert,
   KeyboardAvoidingView,
+  ActivityIndicator,
 } from "react-native";
 import LogoIcon from "../../assets/icons/logoIcon"; //SVG
 import axios from "axios";
 
-const BASE_URI = "http://172:3003";
+// const BASE_URI = "http://192.168.100.26:3003";
+const BASE_URI = "https://785f-203-81-217-42.ngrok.io";
 
-export default function LoginScreen({ navigation }): JSX.Element {
+export default function LoginScreen({ navigation }: any): JSX.Element {
+  // const { state, dispatch } = useContext(GlobalContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const passwordInputRef: any = useRef("");
 
   const handleSubmit = async () => {
-    const res = await axios.post(
-      `${BASE_URI}/login`,
-      {
-        email,
-        password,
-      },
-      { withCredentials: true }
-    );
+    try {
+      setIsLoading(true);
+      const res = await axios.post(
+        `${BASE_URI}/login`,
+        {
+          email: email,
+          password: password,
+        },
+        { withCredentials: true }
+      );
+      console.log(res);
+    } catch (err: any) {
+      console.log(err);
+      Alert.alert("Error", `${err?.response?.data?.message || "Failed"}`);
+    } finally {
+      setIsLoading(false);
+    }
   };
   return (
     <SafeAreaView>
@@ -57,21 +72,27 @@ export default function LoginScreen({ navigation }): JSX.Element {
               autoCapitalize="none"
               autoCorrect={false}
               placeholderTextColor={"#a8a5a5"}
+              returnKeyType="next"
+              onSubmitEditing={() => passwordInputRef.current.focus()}
             />
 
             <TextInput
+              ref={passwordInputRef}
               style={styles.textInput}
               autoCapitalize="none"
               autoCorrect={false}
               secureTextEntry={true}
-              value={password}
+              // value={password}
               onChangeText={(text) => setPassword(text)}
               placeholder={"Password"}
-              keyboardType="visible-password"
+              // keyboardType={true ? "default" : "visible-password"}
+              // keyboardType="default"
+              // keyboardType={`${false ? "default" : "visible-password"}`}
               placeholderTextColor={"#a8a5a5"}
+              returnKeyType="done"
+              onSubmitEditing={() => handleSubmit()}
               // blurOnSubmit={false}
-              // multiline={false}
-              // onChangeText={password => updateState({password})}
+              multiline={false}
               // right={
               //   <TextInput.Icon
               //     name="eye"
@@ -88,7 +109,11 @@ export default function LoginScreen({ navigation }): JSX.Element {
               style={styles.button}
               onPress={() => handleSubmit()}
             >
-              <Text style={styles.buttonText}>LOGIN</Text>
+              {isLoading ? (
+                <ActivityIndicator size="small" />
+              ) : (
+                <Text style={styles.buttonText}>LOGIN</Text>
+              )}
             </TouchableOpacity>
           </View>
           <TouchableOpacity onPress={() => navigation.navigate("Sign-up")}>
