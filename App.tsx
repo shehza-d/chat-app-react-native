@@ -45,7 +45,7 @@ export default function App() {
            <Stack.Screen
             name="Sign-up"
             component={SignupScreen}
-            // options={{ title: "Let's get Started" }}
+            options={{ title: "Let's get Started" }}
           />
           
         </Stack.Navigator>
