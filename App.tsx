@@ -11,6 +11,7 @@ import {
   View,
   TextInput,
 } from "react-native";
+import ContextProvider from "./context/context";
 import LoginScreen from "./src/screens/login";
 import SignupScreen from "./src/screens/signup";
 // import Login from './components/login';
@@ -27,7 +28,7 @@ const globalScreenOptions = {
 
 export default function App() {
   return (
-    <>
+    <ContextProvider>
       <StatusBar
         // animated={true}
         backgroundColor="#5DFF43"
@@ -50,6 +51,6 @@ export default function App() {
           
         </Stack.Navigator>
       </NavigationContainer>
-    </>
+    </ContextProvider>
   );
 }

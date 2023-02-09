@@ -1,4 +1,4 @@
-import React, { RefObject, useRef, useState } from "react";
+import React, { RefObject, useContext, useRef, useState } from "react";
 import { loginStyles as styles } from "../styles/loginCSS";
 import {
   SafeAreaView,
@@ -16,18 +16,21 @@ import {
 } from "react-native";
 import LogoIcon from "../../assets/icons/logoIcon"; //SVG
 import axios from "axios";
-// import { GlobalContext } from './../context/Context';
+import { GlobalContext } from "../../context/context";
 
 // const BASE_URI = "http://192.168.100.26:3003";
 const BASE_URI = "https://785f-203-81-217-42.ngrok.io";
 
 export default function LoginScreen({ navigation }: any): JSX.Element {
-  // const { state, dispatch } = useContext(GlobalContext);
+  const { state, dispatch } = useContext(GlobalContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const passwordInputRef: any = useRef("");
+
+  console.log(state.testing);
+  Alert.alert(state.testing);
 
   const handleSubmit = async () => {
     try {
@@ -40,7 +43,7 @@ export default function LoginScreen({ navigation }: any): JSX.Element {
         },
         { withCredentials: true }
       );
-      console.log(res);
+      console.log("MY res",res);
     } catch (err: any) {
       console.log(err);
       Alert.alert("Error", `${err?.response?.data?.message || "Failed"}`);
