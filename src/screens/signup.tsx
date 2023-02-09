@@ -16,6 +16,7 @@ import {
 } from "react-native";
 import LogoIcon from "../../assets/icons/logoIcon"; //SVG
 import axios from "axios";
+// import { GlobalContext } from './../context/Context';
 
 const BASE_URI = "https://785f-203-81-217-42.ngrok.io";
 
