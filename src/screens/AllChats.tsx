@@ -1,5 +1,5 @@
 
-export default function Chat(){
+export default function AllChat(){
 	return (<>
 	
 	chat
