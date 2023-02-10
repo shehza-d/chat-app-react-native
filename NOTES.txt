@@ -1,0 +1,5 @@
+splash screen
+default profile pic 
+adding profile pic
+swipe gestures
+animations

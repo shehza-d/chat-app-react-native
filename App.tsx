@@ -39,7 +39,9 @@ export default function App() {
         // hidden={hidden}
       />
       <NavigationContainer>
-        <Stack.Navigator screenOptions={globalScreenOptions} initialRouteName="Chats">
+        <Stack.Navigator screenOptions={globalScreenOptions} 
+        // initialRouteName="Login"
+        >
           <Stack.Screen
             name="Login"
             component={LoginScreen}
@@ -51,7 +53,7 @@ export default function App() {
             options={{ title: "SIGN-UP" }}
           />
           <Stack.Screen
-            name="Chats"
+            name="AllChats"
             component={AllChat}
             options={{ title: "All Chats" }}
           />

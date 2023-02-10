@@ -18,8 +18,8 @@ import LogoIcon from "../../assets/icons/logoIcon"; //SVG
 import axios from "axios";
 import { GlobalContext } from "../../context/context";
 
-// const BASE_URI = "http://192.168.100.26:3003";
-const BASE_URI = "https://785f-203-81-217-42.ngrok.io";
+const BASE_URI = "http://192.168.100.26:3003";
+// const BASE_URI = "https://785f-203-81-217-42.ngrok.io";
 
 export default function LoginScreen({ navigation }: any): JSX.Element {
   const { state, dispatch } = useContext(GlobalContext);
@@ -48,6 +48,7 @@ export default function LoginScreen({ navigation }: any): JSX.Element {
       console.log(err);
       Alert.alert("Error", `${err?.response?.data?.message || "Failed"}`);
     } finally {
+      navigation.replace('AllChats')
       setIsLoading(false);
     }
   };

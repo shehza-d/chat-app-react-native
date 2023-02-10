@@ -12,6 +12,7 @@ import {
   KeyboardAvoidingView,
   ActivityIndicator,
 } from "react-native";
+
 export default function AllChat() {
   return (
     <>
@@ -19,3 +20,7 @@ export default function AllChat() {
     </>
   );
 }
+
+const styles = StyleSheet.create({
+
+})

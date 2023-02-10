@@ -41,6 +41,7 @@ export default function LoginScreen({ navigation }: any): JSX.Element {
         },
         { withCredentials: true }
       );
+      navigation.replace("AllChats");
       console.log(res);
     } catch (err: any) {
       console.log(err);
