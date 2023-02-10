@@ -1,5 +1,8 @@
+use tailwind in this project
 splash screen
 default profile pic 
 adding profile pic
 swipe gestures
 animations
+
+make server tomorrow
