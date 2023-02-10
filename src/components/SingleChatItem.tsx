@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
+// import { MdArrowForwardIos } from "react-icons/md";
 import { userData } from "../../types/types";
 
 const themeColor = "#5DFF43";
@@ -60,7 +61,13 @@ export default function SingleChatItem({
             borderRadius: 50,
           }}
         >{`${unreadMsg}`}</Text>
+
       </View>
+        <Text>
+>
+        </Text>
+
+     
     </View>
   );
 }
