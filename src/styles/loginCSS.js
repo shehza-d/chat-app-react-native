@@ -1,5 +1,7 @@
 import { StyleSheet } from "react-native";
 
+// #5DFF43 theme green
+
 export const loginStyles = StyleSheet.create({
   container: {
     // flex:1,
