@@ -2,7 +2,7 @@
   "name": "chatapp-realtime-server",
   "version": "1.0.0",
   "description": "Realtime Socket.io Server for SMIT Chat app",
-  "main": "./dist/index.mjs",
+  "main": "/dist/index.mjs",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

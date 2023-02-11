@@ -4,13 +4,13 @@ const DB_PASSWORD = process.env.DB_PASSWORD || "LMLMLM";
 const DB_NAME = "ChatApp-SMIT";
 // MongoDB(dbURI)
 const dbURI = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.wclhhvn.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
+mongoose.set('strictQuery', false);
 try {
     await mongoose.connect(dbURI);
 }
 catch (err) {
     console.log("m dereper", err);
 }
-//  mongoose.set('strictQuery', false);
 // //for status of DB
 // ////////////////mongodb connected disconnected events///////////
 mongoose.connection.on("connected", () => console.log("Mongoose is connected")
