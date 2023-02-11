@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from 'cookie-parser';
 // import path from "path";
 // import mongoose from "mongoose";
 // import fs from "fs";
@@ -9,8 +10,11 @@ const app = express();
 const port = process.env.PORT || 3003;
 //middleware configuration
 app.use(express.json());
+app.use(cookieParser());
 app.use(cors()); //{origin: ['http://localhost:3000', 'https://ecom-25516.web.app', "*"]},
-console.log("Hello World! Ultra pro max");
+app.use('/api/v1', authAPIs);
+app.use('/api/v1', authGuard);
+app.use('/api/v1', productApis);
 app.get("/", (req, res) => {
     res.send(`"Hello World!", ${req.ip}`);
 });
