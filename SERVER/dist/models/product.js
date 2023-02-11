@@ -7,7 +7,3 @@ export const productModel = mongoose.model("productSchema", new mongoose.Schema(
     // classID: String,
     createdDate: { type: Date, default: Date.now },
 }));
-// const ConnectMongoDB = (url) => {
-//   return mongoose.connect(url)
-// }
-// module.exports = ConnectMongoDB

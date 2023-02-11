@@ -11,6 +11,8 @@
 
 /node_modules
 node_modules
+scr/node_modules
+dist/node_modules
 /WEB/node_modules
 WEB/node_modules
 

@@ -16,3 +16,5 @@ router.post("/logout", async (req, res) => {
 });
 
 router.post("/forget-password", async (req, res) => {});
+
+export default router

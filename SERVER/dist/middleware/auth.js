@@ -11,3 +11,4 @@ router.post("/logout", async (req, res) => {
     res.send({ message: "Logout successful" });
 });
 router.post("/forget-password", async (req, res) => { });
+export default router;
