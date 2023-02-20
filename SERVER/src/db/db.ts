@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
-const DB_USERNAME = process.env.DB_USERNAME || "shehzad";
-const DB_PASSWORD = process.env.DB_PASSWORD || "LMLMLM";
-const DB_NAME = "ChatApp-SMIT";
+  const DB_USERNAME = process.env.DB_USERNAME || "shehzad";
+  const DB_PASSWORD = process.env.DB_PASSWORD || "LMLMLM";
+  const DB_NAME = "ChatApp-SMIT";
 
 // MongoDB(dbURI)
 const dbURI = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@cluster0.wclhhvn.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;

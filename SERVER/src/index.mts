@@ -1,3 +1,4 @@
+// https://chat-app-production-d224.up.railway.app
 //Packages
 import express from "express";
 import { Request, Response } from "express";
@@ -11,7 +12,7 @@ import cookieParser from "cookie-parser";
 
 // my Module imports
 import mongoose from "./db/db.js";
-import authAPIs from "./routes/auth.js";
+import authAPIs from "./routes/auth/index.js";
 
 const app = express();
 const port = process.env.PORT || 3003;
